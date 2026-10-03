@@ -78,10 +78,10 @@ window.TRIP = (function () {
         },
         {
             day: 4, date: '2026-11-02', phase: 'taichung', title: 'High Speed Rail to Taichung',
-            stay: 'Taichung hotel, 3 nights (to book) — near Taichung HSR or Xitun',
+            stay: 'Taichung hotel, 2 nights (to book) — near Taichung HSR or Xitun',
             plan: [
                 ['Morning', 'HSR Taipei → Taichung (~1 h). Reserve seats.'],
-                ['Afternoon', 'National Taichung Theater, Calligraphy Greenway, Miyahara (ice cream in an old eye clinic).'],
+                ['Afternoon', 'National Taichung Theater, Calligraphy Greenway (Chun Shui Tang, where bubble tea was born: ask for decaf or fruit tea), Miyahara (ice cream in an old eye clinic).'],
                 ['Evening', 'Fengjia Night Market. Go early (5–6 pm) before it gets packed.'],
             ],
             places: [
@@ -108,47 +108,46 @@ window.TRIP = (function () {
             ],
         },
         {
-            day: 6, date: '2026-11-04', phase: 'taichung', title: 'Slow day & Gaomei sunset',
-            stay: 'Taichung hotel',
+            day: 6, date: '2026-11-04', phase: 'alishan', title: 'Up the Alishan Forest Railway',
+            stay: 'Alishan hotel, 2 nights (BOOK FIRST) — inside the forest recreation area',
             plan: [
-                ['Morning', 'Sleep in. Taichung Park and the lake pavilion.'],
-                ['Lunch', 'Second Market food stalls, then Chun Shui Tang, where bubble tea was born (ask for decaf or a fruit tea).'],
-                ['Afternoon', 'Rest at the hotel before the Alishan trip.'],
-                ['Sunset', 'Gaomei Wetlands: wind turbines and mirror-like tidal flats from the flat boardwalk. Taxi both ways.'],
-            ],
-            places: [
-                { name: 'Taichung Park', lat: 24.1445, lng: 120.6835, type: 'activity', desc: 'Lake pavilion' },
-                { name: 'Chun Shui Tang (original)', lat: 24.1512, lng: 120.6634, type: 'dining', desc: 'Birthplace of bubble tea' },
-                { name: 'Gaomei Wetlands', lat: 24.3125, lng: 120.5497, type: 'activity', desc: 'Sunset boardwalk' },
-            ],
-        },
-        {
-            day: 7, date: '2026-11-05', phase: 'alishan', title: 'Up the Alishan Forest Railway',
-            stay: 'Alishan hotel (BOOK FIRST) — inside the forest recreation area',
-            plan: [
-                ['Morning', 'Train Taichung → Chiayi (TRA ~1 h). Leave big bags in a Chiayi locker or hotel.'],
+                ['Morning', 'Train Taichung → Chiayi (TRA ~1 h). Leave big bags in a Chiayi locker or hotel; take only 2 nights\' things up.'],
                 ['Midday', 'Alishan Forest Railway Chiayi → Alishan (~2.5 h). Gentler than the winding bus.'],
-                ['Afternoon', 'Giant Trees Trail boardwalk and Sister Ponds, at an easy pace. Rest often: it is 2,200 m up.'],
+                ['Afternoon', 'Check in and rest. Short, flat stroll near the hotel only: it is 2,200 m up, so let her body adjust.'],
                 ['Evening', 'Early dinner and early night. It gets cold (5–10 °C), so wear the warm layers.'],
             ],
             places: [
                 { name: 'Chiayi Station', lat: 23.4791, lng: 120.4410, type: 'transport', desc: 'Forest railway starts here' },
-                { name: 'Alishan Station', lat: 23.5100, lng: 120.8050, type: 'stay', desc: 'Overnight in the mountains' },
+                { name: 'Alishan Station', lat: 23.5100, lng: 120.8050, type: 'stay', desc: 'Two nights in the mountains' },
+            ],
+        },
+        {
+            day: 7, date: '2026-11-05', phase: 'alishan', title: 'A slow full day in Alishan',
+            stay: 'Alishan hotel',
+            plan: [
+                ['Optional', 'Zhushan sunrise train (~4:30–5:00). Only if she feels up to it; there is a second chance tomorrow.'],
+                ['Morning', 'Giant Trees Trail boardwalk and Sister Ponds, at an easy pace with plenty of rests.'],
+                ['Lunch', 'Simple hot lunch near the station. Alishan high-mountain tea (decaf options exist) to take home.'],
+                ['Afternoon', 'Nap at the hotel. Later, Zhaoping Station and Shouzhen Temple are flat and close by.'],
+                ['Evening', 'Watch the sea of clouds roll in at dusk if the weather is right. Early night.'],
+            ],
+            places: [
                 { name: 'Giant Trees Trail', lat: 23.5145, lng: 120.8060, type: 'activity', desc: 'Boardwalk, ancient cypresses' },
                 { name: 'Sister Ponds', lat: 23.5165, lng: 120.8040, type: 'activity', desc: 'Forest pond walk' },
+                { name: 'Zhaoping Station', lat: 23.5120, lng: 120.8090, type: 'activity', desc: 'Flat, views, cherry trees' },
+                { name: 'Zhushan Sunrise Viewpoint', lat: 23.5134, lng: 120.8178, type: 'activity', desc: 'Optional sunrise' },
             ],
         },
         {
             day: 8, date: '2026-11-06', phase: 'taipei', title: 'Alishan morning, back to Taipei',
             stay: 'Taipei hotel, 3 nights (to book)',
             plan: [
-                ['Optional', 'Zhushan sunrise train (~4:30–5:00). Only if she feels up to it; the views from Zhaoping Station later are lovely too.'],
+                ['Optional', 'Second chance at the Zhushan sunrise if yesterday was cloudy.'],
                 ['Morning', 'Slow breakfast and a last forest stroll.'],
                 ['Midday', 'Forest railway back down to Chiayi (~2.5 h), then taxi to Chiayi HSR (~20 min).'],
                 ['Afternoon', 'HSR Chiayi → Taipei (~1.5 h). Check in and rest.'],
             ],
             places: [
-                { name: 'Zhushan Sunrise Viewpoint', lat: 23.5134, lng: 120.8178, type: 'activity', desc: 'Optional sunrise' },
                 { name: 'Chiayi HSR', lat: 23.4594, lng: 120.3233, type: 'transport', desc: 'To Taipei' },
             ],
         },
@@ -210,12 +209,12 @@ window.TRIP = (function () {
         booknow: {
             title: 'Book Now', icon: '🚨',
             items: [
-                ['bk-alishan-hotel', 'Alishan hotel for Thu 5 Nov (sells out first)'],
-                ['bk-alishan-train', 'Alishan Forest Railway: up Thu 5 Nov, down Fri 6 Nov'],
+                ['bk-alishan-hotel', 'Alishan hotel, 2 nights: Wed 4 & Thu 5 Nov (sells out first)'],
+                ['bk-alishan-train', 'Alishan Forest Railway: up Wed 4 Nov, down Fri 6 Nov'],
                 ['bk-flight-out', 'Flight SIN → TPE, Fri 30 Oct'],
                 ['bk-flight-home', 'Flight TPE → SIN, Mon 9 Nov'],
                 ['bk-hotel-tpe', 'Taipei hotel, 3 nights (30 Oct – 2 Nov)'],
-                ['bk-hotel-txg', 'Taichung hotel, 3 nights (2 – 5 Nov)'],
+                ['bk-hotel-txg', 'Taichung hotel, 2 nights (2 – 4 Nov)'],
                 ['bk-hotel-tpe2', 'Taipei hotel, 3 nights (6 – 9 Nov)'],
                 ['bk-hsr', 'HSR seats: Taipei → Taichung (2 Nov), Chiayi → Taipei (6 Nov)'],
                 ['bk-driver', 'Private driver for Shifen + Jiufen (Sat 7 Nov), optional'],
@@ -225,7 +224,7 @@ window.TRIP = (function () {
         pregnancy: {
             title: 'Pregnancy Prep', icon: '🤰',
             items: [
-                ['pg-doctor', 'Doctor\'s OK for the trip, including Alishan at 2,200 m'],
+                ['pg-doctor', 'Doctor\'s OK for the trip, including 2 nights in Alishan at 2,200 m'],
                 ['pg-airline', 'Check both airlines\' pregnancy rules; get a fit-to-fly letter if needed'],
                 ['pg-records', 'Copy of antenatal notes / scan reports (phone + paper)'],
                 ['pg-meds', 'Prenatal vitamins and any prescribed meds, in carry-on'],
@@ -282,7 +281,7 @@ window.TRIP = (function () {
     const tips = [
         ['🤰', 'Priority seats', 'MRT, buses and HSR all have priority seats. Taipei MRT info counters give out a pregnancy badge so people offer a seat.'],
         ['🍲', 'Eating safely', 'Say "quán shóu" (fully cooked). Skip raw oysters, sashimi, runny eggs and herbal soups (dong quai, ginseng).'],
-        ['🚕', 'Taxis & Uber', 'Cheap and everywhere. Use them for Jiufen, Gaomei and anywhere uphill.'],
+        ['🚕', 'Taxis & Uber', 'Cheap and everywhere. Use them for Jiufen and anywhere uphill.'],
         ['💳', 'EasyCard', 'Tap for MRT, buses, TRA trains and 7-Eleven. Top up at any convenience store.'],
         ['🚄', 'High Speed Rail', 'Taipei → Taichung in ~1 h. Book on the T Express app.'],
         ['💵', 'Cash', 'Night-market stalls are mostly cash. 7-Eleven ATMs take foreign cards.'],

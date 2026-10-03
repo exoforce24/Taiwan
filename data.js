@@ -96,15 +96,16 @@ window.TRIP = (function () {
             ],
         },
         {
-            day: 5, date: '2026-11-03', phase: 'taichung', title: 'Sun Moon Lake day trip',
+            day: 5, date: '2026-11-03', phase: 'taichung', title: 'Comic Museum & Sun Moon Lake',
             stay: 'Taichung hotel',
             plan: [
-                ['Morning', 'Drive to Sun Moon Lake (~1 h 15, Freeway 6). The last stretch winds a little, so take it gently. Park at Shuishe.'],
-                ['Midday', 'Lake boat between Shuishe, Xuanguang and Ita Thao piers. Lunch at Ita Thao.'],
-                ['Afternoon', 'Sun Moon Lake Ropeway for the view (sit-down cable car). Flat lakeside path near Shuishe.'],
+                ['Morning', 'National Taiwan Museum of Comics at its 10:00 opening (old police dorms, West District; closed Mondays). About an hour.'],
+                ['Midday', 'Drive to Sun Moon Lake (~1 h 15, Freeway 6). The last stretch winds a little, so take it gently. Late lunch at Ita Thao.'],
+                ['Afternoon', 'Lake boat between Ita Thao, Xuanguang and Shuishe piers, then the Sun Moon Lake Ropeway if time allows (check last ride). Flat lakeside path near Shuishe.'],
                 ['Evening', 'Drive back to Taichung before dark. Easy dinner near the hotel and an early night.'],
             ],
             places: [
+                { name: 'National Taiwan Museum of Comics', lat: 24.1375, lng: 120.6770, type: 'activity', desc: 'Closed Mondays' },
                 { name: 'Shuishe Pier', lat: 23.8665, lng: 120.9115, type: 'activity', desc: 'Boat & lakeside path' },
                 { name: 'Ita Thao', lat: 23.8507, lng: 120.9338, type: 'dining', desc: 'Lunch' },
                 { name: 'Sun Moon Lake Ropeway', lat: 23.8519, lng: 120.9289, type: 'activity', desc: 'Cable car views' },

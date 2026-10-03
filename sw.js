@@ -1,6 +1,6 @@
 /* Service Worker for offline support */
 
-const CACHE_NAME = 'taiwan-trip-v12';
+const CACHE_NAME = 'taiwan-trip-v13';
 const ASSETS = [
     './',
     './index.html',

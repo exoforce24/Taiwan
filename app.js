@@ -216,7 +216,9 @@
                 const link = byId.get(en.target.id);
                 if (!link) return;
                 navLinks.forEach(a => a.classList.toggle('active', a === link));
-                link.scrollIntoView({ block: 'nearest', inline: 'center' });
+                // Only move the bar sideways; scrollIntoView here interrupts the page's own scrolling on phones
+                const nav = link.parentElement;
+                nav.scrollTo({ left: link.offsetLeft - (nav.clientWidth - link.offsetWidth) / 2, behavior: 'smooth' });
             });
         }, { rootMargin: '-45% 0px -50% 0px' });
         byId.forEach((_, id) => { const sec = document.getElementById(id); if (sec) io.observe(sec); });

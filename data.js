@@ -80,7 +80,7 @@ window.TRIP = (function () {
             day: 4, date: '2026-11-02', phase: 'taichung', title: 'High Speed Rail to Taichung',
             stay: 'Taichung hotel, 2 nights (to book) — near Taichung HSR or Xitun',
             plan: [
-                ['Morning', 'HSR Taipei → Taichung (~1 h). Reserve seats.'],
+                ['Morning', 'HSR Taipei → Taichung (~1 h). Reserve seats. Pick up the rental car at Taichung HSR.'],
                 ['Afternoon', 'National Taichung Theater, Calligraphy Greenway (Chun Shui Tang, where bubble tea was born: ask for decaf or fruit tea), Miyahara (ice cream in an old eye clinic).'],
                 ['Evening', 'Fengjia Night Market. Go early (5–6 pm) before it gets packed.'],
             ],
@@ -96,10 +96,10 @@ window.TRIP = (function () {
             day: 5, date: '2026-11-03', phase: 'taichung', title: 'Sun Moon Lake day trip',
             stay: 'Taichung hotel',
             plan: [
-                ['Morning', 'Nantou bus from Taichung HSR (~1.5 h). Buy the bus + boat combo ticket there.'],
+                ['Morning', 'Drive to Sun Moon Lake (~1 h 15, Freeway 6). The last stretch winds a little, so take it gently. Park at Shuishe.'],
                 ['Midday', 'Lake boat between Shuishe, Xuanguang and Ita Thao piers. Lunch at Ita Thao.'],
                 ['Afternoon', 'Sun Moon Lake Ropeway for the view (sit-down cable car). Flat lakeside path near Shuishe.'],
-                ['Evening', 'Bus back to Taichung. Easy dinner near the hotel.'],
+                ['Evening', 'Drive back before dark. Easy dinner near the hotel.'],
             ],
             places: [
                 { name: 'Shuishe Pier', lat: 23.8665, lng: 120.9115, type: 'activity', desc: 'Boat & lakeside path' },
@@ -111,7 +111,7 @@ window.TRIP = (function () {
             day: 6, date: '2026-11-04', phase: 'alishan', title: 'Up the Alishan Forest Railway',
             stay: 'Alishan hotel, 2 nights (BOOK FIRST) — inside the forest recreation area',
             plan: [
-                ['Morning', 'Train Taichung → Chiayi (TRA ~1 h). Leave big bags in a Chiayi locker or hotel; take only 2 nights\' things up.'],
+                ['Morning', 'Return the rental car, then train Taichung → Chiayi (TRA ~1 h). Leave big bags in a Chiayi locker or hotel; take only 2 nights\' things up.'],
                 ['Midday', 'Alishan Forest Railway Chiayi → Alishan (~2.5 h). Gentler than the winding bus.'],
                 ['Afternoon', 'Check in and rest. Short, flat stroll near the hotel only: it is 2,200 m up, so let her body adjust.'],
                 ['Evening', 'Early dinner and early night. It gets cold (5–10 °C), so wear the warm layers.'],
@@ -170,6 +170,7 @@ window.TRIP = (function () {
             stay: 'Taipei hotel',
             plan: [
                 ['Morning', 'Beitou: Thermal Valley viewing path and the wooden Beitou Library. Look, don\'t soak (no hot springs in pregnancy).'],
+                ['Optional', 'Swap Tamsui for Yangmingshan: taxi up to the flat Erziping Trail and the silver grass (best in Nov). Skip Xiaoyoukeng (sulphur fumes) and the Qixing climb.'],
                 ['Afternoon', 'MRT to Tamsui. Flat riverside promenade and Old Street snacks (cooked only).'],
                 ['Sunset', 'Fisherman\'s Wharf and Lover\'s Bridge. Pack for the flight tonight.'],
             ],
@@ -217,6 +218,7 @@ window.TRIP = (function () {
                 ['bk-hotel-txg', 'Taichung hotel, 2 nights (2 – 4 Nov)'],
                 ['bk-hotel-tpe2', 'Taipei hotel, 3 nights (6 – 9 Nov)'],
                 ['bk-hsr', 'HSR seats: Taipei → Taichung (2 Nov), Chiayi → Taipei (6 Nov)'],
+                ['bk-car', 'Rental car in Taichung, Mon 2 – Wed 4 Nov (pick up at Taichung HSR)'],
                 ['bk-driver', 'Private driver for Shifen + Jiufen (Sat 7 Nov), optional'],
                 ['bk-insurance', 'Travel insurance that covers pregnancy'],
             ],
@@ -245,6 +247,7 @@ window.TRIP = (function () {
                 ['pre-cards', 'Tell the bank about overseas card use'],
                 ['pre-apps', 'Apps: Google Maps (offline Taiwan), T Express (HSR), Taiwan Railway, Uber'],
                 ['pre-offline', 'Download offline Google Maps for north & central Taiwan'],
+                ['pre-idp', 'International Driving Permit from the AA Singapore, plus your Singapore licence'],
                 ['pre-copies', 'Copies of passports & bookings in the cloud'],
             ],
         },
@@ -281,6 +284,7 @@ window.TRIP = (function () {
     const tips = [
         ['🤰', 'Priority seats', 'MRT, buses and HSR all have priority seats. Taipei MRT info counters give out a pregnancy badge so people offer a seat.'],
         ['🍲', 'Eating safely', 'Say "quán shóu" (fully cooked). Skip raw oysters, sashimi, runny eggs and herbal soups (dong quai, ginseng).'],
+        ['🚗', 'Driving in Taiwan', 'They drive on the RIGHT, the opposite of Singapore. Scooters filter everywhere, so check mirrors before every turn. Right turn on red is not allowed.'],
         ['🚕', 'Taxis & Uber', 'Cheap and everywhere. Use them for Jiufen and anywhere uphill.'],
         ['💳', 'EasyCard', 'Tap for MRT, buses, TRA trains and 7-Eleven. Top up at any convenience store.'],
         ['🚄', 'High Speed Rail', 'Taipei → Taichung in ~1 h. Book on the T Express app.'],

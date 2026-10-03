@@ -14,24 +14,53 @@
         return;
     }
 
-    try {
+    // Trip code: shared only between the two of you, never stored in the repo.
+    // Open the site once with #code=YOURCODE (or tap the sync bar) on each phone.
+    const CODE_KEY = 'taiwan-trip-sync-code';
+
+    function getCode() {
+        const m = location.hash.match(/code=([^&]+)/);
+        if (m) {
+            const code = decodeURIComponent(m[1]).trim();
+            try { localStorage.setItem(CODE_KEY, code); } catch {}
+            history.replaceState(null, '', location.pathname + location.search);
+            return code;
+        }
+        try { return localStorage.getItem(CODE_KEY); } catch { return null; }
+    }
+
+    function askForCode() {
+        const code = (prompt('Enter your trip code to sync checklists & notes between phones:') || '').trim();
+        if (code.length < 8) {
+            if (code) alert('Use at least 8 characters.');
+            return;
+        }
+        try { localStorage.setItem(CODE_KEY, code); } catch {}
+        location.reload();
+    }
 
     bar.hidden = false;
+    const code = getCode();
+    if (!code || !(window.crypto && crypto.subtle)) {
+        document.getElementById('sync-icon').textContent = '🔒';
+        document.getElementById('sync-text').textContent = 'Tap to enter trip code and sync between phones';
+        bar.style.cursor = 'pointer';
+        bar.addEventListener('click', askForCode);
+        return;
+    }
+
+    // DB path is a SHA-256 of the code, so it can't be guessed from the site's source
+    crypto.subtle.digest('SHA-256', new TextEncoder().encode('taiwan-2026:' + code)).then(buf => {
+        const hex = Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+        start('trip_' + hex.slice(0, 40));
+    });
+
+    function start(DB_PATH) {
+    try {
 
     firebase.initializeApp(window.FIREBASE_CONFIG);
     const db = firebase.database();
 
-    // Simple hash so the DB path isn't the raw key
-    function hashPath(str) {
-        let hash = 5381;
-        for (let i = 0; i < str.length; i++) {
-            hash = ((hash << 5) + hash) + str.charCodeAt(i);
-            hash = hash & hash;
-        }
-        return 'trip_' + Math.abs(hash).toString(36);
-    }
-
-    const DB_PATH = hashPath(window.SYNC_KEY || 'taiwan-2026');
     const checklistRef = db.ref(DB_PATH + '/checklist');
     const notesRef = db.ref(DB_PATH + '/notes');
 
@@ -133,5 +162,6 @@
     } catch (err) {
         console.warn('Firebase sync failed to initialize:', err);
         bar.hidden = true;
+    }
     }
 })();

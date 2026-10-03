@@ -20,11 +20,21 @@ Without a config the site still works; ticks and notes just stay on each phone.
 
 1. Go to https://console.firebase.google.com and **Create a project** (e.g. `taiwan-trip`; Google Analytics can be off).
 2. **Build → Realtime Database → Create database**. Pick **Singapore (asia-southeast1)**, start in **locked mode**.
-3. In the database's **Rules** tab, paste this and **Publish** (test mode rules expire after 30 days, before the trip ends):
+3. In the database's **Rules** tab, paste this and **Publish**. It blocks listing or wiping the whole database; only someone who knows your trip code can find your data:
    ```json
-   { "rules": { ".read": true, ".write": true } }
+   {
+     "rules": {
+       ".read": false,
+       ".write": false,
+       "$trip": {
+         ".read": "$trip.matches(/^trip_[0-9a-f]{40}$/)",
+         ".write": "$trip.matches(/^trip_[0-9a-f]{40}$/)"
+       }
+     }
+   }
    ```
 4. **Project settings (⚙️) → General → Your apps → Web (`</>`)**, register an app, and copy the `firebaseConfig` object.
-5. Paste it into `firebase-config.js` as `window.FIREBASE_CONFIG = { ... };` and optionally change `SYNC_KEY`.
+5. Paste it into `firebase-config.js` as `window.FIREBASE_CONFIG = { ... };`.
+6. On each phone, tap the 🔒 sync bar and enter the same trip code (8+ characters, something only the two of you know), or open the site once as `https://your-site/#code=YOURCODE`.
 
-The Firebase web config is not a secret (it ships to every browser), but anyone with the URL and key could edit the checklist, so keep `SYNC_KEY` to yourselves.
+The trip code is never stored in this repo. The database path is a SHA-256 of it, so it can't be worked out from the public source.

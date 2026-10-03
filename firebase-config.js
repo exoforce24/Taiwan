@@ -7,6 +7,5 @@
 
 window.FIREBASE_CONFIG = null;
 
-// Both phones use the same key, so they share one checklist.
-// Change it to anything only the two of you know.
-window.SYNC_KEY = 'taiwan-2026';
+// The shared trip code is NOT stored here (this file is public).
+// Each phone enters it once: tap the sync bar, or open the site with #code=YOURCODE

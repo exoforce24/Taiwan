@@ -14,7 +14,6 @@ window.TRIP = (function () {
     const phases = {
         taipei:    { name: 'Taipei',    color: '#e53950' },
         taichung:  { name: 'Taichung',  color: '#f5a623' },
-        sunmoon:   { name: 'Sun Moon Lake', color: '#26c6da' },
         alishan:   { name: 'Alishan',   color: '#4caf50' },
         flight:    { name: 'Home',      color: '#42a5f5' },
     };
@@ -23,7 +22,6 @@ window.TRIP = (function () {
     const cities = {
         taipei:    { lat: 25.04, lon: 121.56, name: 'Taipei' },
         taichung:  { lat: 24.15, lon: 120.67, name: 'Taichung' },
-        sunmoon:   { lat: 23.86, lon: 120.91, name: 'Sun Moon Lake' },
         alishan:   { lat: 23.51, lon: 120.80, name: 'Alishan' },
     };
 
@@ -80,7 +78,7 @@ window.TRIP = (function () {
         },
         {
             day: 4, date: '2026-11-02', phase: 'taichung', title: 'High Speed Rail to Taichung',
-            stay: 'Taichung hotel, 1 night (to book) — near Taichung HSR or Xitun',
+            stay: 'Taichung hotel, 2 nights (to book) — near Taichung HSR or Xitun',
             plan: [
                 ['Morning', 'HSR Taipei → Taichung (~1 h). Reserve seats. Pick up the rental car at Taichung HSR.'],
                 ['Afternoon', 'National Taichung Theater, Calligraphy Greenway (Chun Shui Tang, where bubble tea was born: ask for decaf or fruit tea), Miyahara (ice cream in an old eye clinic).'],
@@ -95,13 +93,13 @@ window.TRIP = (function () {
             ],
         },
         {
-            day: 5, date: '2026-11-03', phase: 'sunmoon', title: 'Drive to Sun Moon Lake (overnight)',
-            stay: 'Sun Moon Lake hotel, 1 night (to book) — lakeside at Shuishe or Ita Thao',
+            day: 5, date: '2026-11-03', phase: 'taichung', title: 'Sun Moon Lake day trip',
+            stay: 'Taichung hotel',
             plan: [
                 ['Morning', 'Drive to Sun Moon Lake (~1 h 15, Freeway 6). The last stretch winds a little, so take it gently. Park at Shuishe.'],
                 ['Midday', 'Lake boat between Shuishe, Xuanguang and Ita Thao piers. Lunch at Ita Thao.'],
                 ['Afternoon', 'Sun Moon Lake Ropeway for the view (sit-down cable car). Flat lakeside path near Shuishe.'],
-                ['Evening', 'Check in by the lake. Quiet lakeside stroll once the day-trippers leave, dinner at Ita Thao.'],
+                ['Evening', 'Drive back to Taichung before dark. Easy dinner near the hotel and an early night.'],
             ],
             places: [
                 { name: 'Shuishe Pier', lat: 23.8665, lng: 120.9115, type: 'activity', desc: 'Boat & lakeside path' },
@@ -113,7 +111,7 @@ window.TRIP = (function () {
             day: 6, date: '2026-11-04', phase: 'alishan', title: 'Up the Alishan Forest Railway',
             stay: 'Alishan hotel, 2 nights (BOOK FIRST) — inside the forest recreation area',
             plan: [
-                ['Early', 'Misty lake at dawn from the hotel. Leave by 7:30 and drive to Chiayi (~1 h 45). Return the car in Chiayi (book a one-way drop-off).'],
+                ['Early', 'Return the M4 to the Taichung shop as soon as it opens. HSR Taichung → Chiayi (~25 min), then taxi to Chiayi TRA station (~25 min). Aim to be there by 9:30.'],
                 ['Morning', 'Leave big bags at a Chiayi hotel or locker; take only 2 nights\' things up. Alishan Express No. 5 leaves Chiayi 10:00 (the only train that goes all the way up).'],
                 ['Midday', 'Lunch during the 65-min stop at Fenqihu (famous railway bento).'],
                 ['Afternoon', 'Arrive Alishan 14:56. Check in and rest. Short, flat stroll near the hotel only: it is 2,200 m up, so let her body adjust.'],
@@ -218,11 +216,10 @@ window.TRIP = (function () {
                 ['bk-flight-out', 'Flight SIN → TPE, Fri 30 Oct'],
                 ['bk-flight-home', 'Flight TPE → SIN, Mon 9 Nov'],
                 ['bk-hotel-tpe', 'Taipei hotel, 3 nights (30 Oct – 2 Nov)'],
-                ['bk-hotel-txg', 'Taichung hotel, 1 night (Mon 2 Nov)'],
-                ['bk-hotel-sml', 'Sun Moon Lake lakeside hotel, 1 night (Tue 3 Nov)'],
+                ['bk-hotel-txg', 'Taichung hotel, 2 nights (2 – 4 Nov)'],
                 ['bk-hotel-tpe2', 'Taipei hotel, 3 nights (6 – 9 Nov)'],
-                ['bk-hsr', 'HSR seats: Taipei → Taichung (2 Nov), Chiayi → Taipei (6 Nov)'],
-                ['bk-car', 'Rental car Mon 2 – Wed 4 Nov: pick up Taichung HSR, one-way drop-off in Chiayi'],
+                ['bk-hsr', 'HSR seats: Taipei → Taichung (2 Nov), Taichung → Chiayi (4 Nov, ~8:30), Chiayi → Taipei (6 Nov)'],
+                ['bk-car', 'Rental car Mon 2 – Wed 4 Nov (Taichung shop); check it opens early enough on Wed 4 Nov'],
                 ['bk-driver', 'Private driver for Shifen + Jiufen (Sat 7 Nov), optional'],
                 ['bk-insurance', 'Travel insurance that covers pregnancy'],
             ],

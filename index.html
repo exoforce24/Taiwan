@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Taiwan Trip | Oct 30 - Nov 9, 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0a0a0f">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏮</text></svg>">
+</head>
+<body>
+
+<!-- Hero Section -->
+<header class="hero" id="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <p class="hero-flag">&#127982;</p>
+        <h1 class="hero-title">Our Taiwan Trip</h1>
+        <p class="hero-subtitle">October 30 &mdash; November 9, 2026</p>
+        <p class="hero-route">Singapore &rarr; Taipei &rarr; Taichung &rarr; Alishan &rarr; Tainan &rarr; Kaohsiung &rarr; Singapore</p>
+        <div class="countdown" id="countdown">
+            <div class="countdown-item"><span id="cd-days">--</span><small>days</small></div>
+            <div class="countdown-item"><span id="cd-hours">--</span><small>hours</small></div>
+            <div class="countdown-item"><span id="cd-mins">--</span><small>mins</small></div>
+            <div class="countdown-item"><span id="cd-secs">--</span><small>secs</small></div>
+        </div>
+        <p class="countdown-label" id="countdown-label">until takeoff</p>
+    </div>
+    <div class="scroll-hint" aria-hidden="true">&darr;</div>
+    <div class="route-progress">
+        <div class="route-line">
+            <div class="route-stops" id="route-stops"></div>
+            <div class="route-track">
+                <div class="route-filled" id="route-filled"></div>
+                <div class="route-car" id="route-car">&#128644;</div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Trip Stats Bar -->
+<section class="stats-bar">
+    <div class="stat"><span class="stat-num">11</span><span class="stat-label">Days</span></div>
+    <div class="stat"><span class="stat-num">5</span><span class="stat-label">Cities</span></div>
+    <div class="stat"><span class="stat-num">6</span><span class="stat-label">Night Markets</span></div>
+    <div class="stat"><span class="stat-num">2,216</span><span class="stat-label">m Alishan</span></div>
+    <div class="stat"><span class="stat-num">1</span><span class="stat-label">Sea of Clouds</span></div>
+</section>
+
+<!-- Live Trip Status (only visible during trip) -->
+<section class="section live-status-section" id="live-status" hidden>
+    <div class="container">
+        <div class="live-status-grid">
+            <div class="card live-day">
+                <div class="lsc-label">Day in Trip</div>
+                <div class="lsc-day-num" id="live-day-num">--</div>
+                <div class="lsc-day-of">of 11 days</div>
+                <div class="lsc-progress-bar"><div class="lsc-progress-fill" id="live-day-fill"></div></div>
+            </div>
+            <div class="card live-today">
+                <div class="lsc-label">Today</div>
+                <h3 id="live-today-title">--</h3>
+                <ul id="live-today-plan" class="plan-list"></ul>
+                <a href="#" id="live-today-link" class="text-link">Open today in the itinerary &rarr;</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Sync Status -->
+<div class="sync-bar" id="sync-bar" hidden>
+    <span class="sync-icon" id="sync-icon">&#128260;</span>
+    <span class="sync-text" id="sync-text">Connecting...</span>
+</div>
+
+<!-- Progress Bar -->
+<section class="progress-section" id="progress-section">
+    <div class="container">
+        <h2>Trip Checklist Progress</h2>
+        <div class="progress-track"><div class="progress-fill" id="progress-bar"></div></div>
+        <div class="progress-meta"><span id="progress-text">0%</span><span id="progress-detail"></span></div>
+    </div>
+</section>
+
+<!-- Quick Nav -->
+<nav class="quick-nav" id="quick-nav">
+    <a href="#book-now">Book</a>
+    <a href="#map-section">Map</a>
+    <a href="#flights">Flights</a>
+    <a href="#itinerary">Itinerary</a>
+    <a href="#weather">Weather</a>
+    <a href="#markets">Markets</a>
+    <a href="#packing">Packing</a>
+    <a href="#tips">Tips</a>
+    <a href="#currency">Money</a>
+    <a href="#emergency">SOS</a>
+</nav>
+
+<!-- Book Now -->
+<section class="section" id="book-now">
+    <div class="container">
+        <h2 class="section-title">&#128680; Book Now</h2>
+        <p class="section-sub">The trip is close. Alishan rooms and forest railway seats go first.</p>
+        <div class="checklist" data-list="booknow"></div>
+    </div>
+</section>
+
+<!-- Map -->
+<section class="section map-section" id="map-section">
+    <div class="container">
+        <h2 class="section-title">&#128506;&#65039; Route Overview</h2>
+        <div class="map-filters" id="map-filters"></div>
+        <div id="trip-map" class="trip-map"></div>
+        <div class="map-legend" id="map-legend"></div>
+    </div>
+</section>
+
+<!-- Flights -->
+<section class="section" id="flights">
+    <div class="container">
+        <h2 class="section-title">&#9992;&#65039; Flights</h2>
+        <div class="flight-grid" id="flight-grid"></div>
+    </div>
+</section>
+
+<!-- Itinerary -->
+<section class="section itinerary-section" id="itinerary">
+    <div class="container">
+        <h2 class="section-title">&#128467;&#65039; Day-by-Day Itinerary</h2>
+        <div class="phase-chips" id="phase-chips"></div>
+        <div class="days" id="days"></div>
+    </div>
+</section>
+
+<!-- Weather -->
+<section class="section" id="weather">
+    <div class="container">
+        <h2 class="section-title">&#127780;&#65039; Live Weather</h2>
+        <p class="section-sub">Current conditions in each base. Early November: 22&ndash;28&nbsp;&deg;C on the coast, 5&ndash;15&nbsp;&deg;C up in Alishan.</p>
+        <div class="weather-grid" id="weather-grid"></div>
+    </div>
+</section>
+
+<!-- Night Markets -->
+<section class="section" id="markets">
+    <div class="container">
+        <h2 class="section-title">&#127982; Night Market Calendar</h2>
+        <p class="section-sub">Some markets only open on certain days, so the plan matches each evening to one that's open.</p>
+        <div class="table-wrap"><table class="nm-table" id="nm-table">
+            <thead><tr><th>Market</th><th>Open</th><th>Our visit</th></tr></thead>
+            <tbody></tbody>
+        </table></div>
+    </div>
+</section>
+
+<!-- Pre-departure -->
+<section class="section" id="predeparture">
+    <div class="container">
+        <h2 class="section-title">&#128338; Before We Fly</h2>
+        <div class="checklist" data-list="predeparture"></div>
+    </div>
+</section>
+
+<!-- Packing -->
+<section class="section" id="packing">
+    <div class="container">
+        <h2 class="section-title">&#127890; Packing Checklist</h2>
+        <div class="checklist" data-list="packing"></div>
+    </div>
+</section>
+
+<!-- Souvenirs -->
+<section class="section" id="souvenirs">
+    <div class="container">
+        <h2 class="section-title">&#129483; Souvenirs &amp; Must-Eats</h2>
+        <div class="checklist" data-list="souvenirs"></div>
+    </div>
+</section>
+
+<!-- Tips -->
+<section class="section" id="tips">
+    <div class="container">
+        <h2 class="section-title">&#128218; Taiwan Tips</h2>
+        <div class="tips-grid" id="tips-grid"></div>
+    </div>
+</section>
+
+<!-- Currency -->
+<section class="section" id="currency">
+    <div class="container">
+        <h2 class="section-title">&#128178; Currency Converter</h2>
+        <div class="card currency-card">
+            <div class="currency-row">
+                <label>SGD <input type="number" id="sgd-input" inputmode="decimal" value="10"></label>
+                <span class="currency-eq">=</span>
+                <label>TWD <input type="number" id="twd-input" inputmode="decimal"></label>
+            </div>
+            <p class="currency-rate" id="currency-rate">Loading rate...</p>
+        </div>
+    </div>
+</section>
+
+<!-- Emergency -->
+<section class="section" id="emergency">
+    <div class="container">
+        <h2 class="section-title">&#128222; Emergency Quick Dial</h2>
+        <div class="sos-grid" id="sos-grid"></div>
+    </div>
+</section>
+
+<footer class="footer">
+    <p>&#127982; Taiwan &middot; Oct 30 &ndash; Nov 9, 2026</p>
+    <p class="footer-dim">Works offline once opened &middot; add to home screen</p>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database-compat.js"></script>
+<script src="data.js"></script>
+<script src="app.js"></script>
+<script src="firebase-config.js"></script>
+<script src="sync.js"></script>
+<script src="map.js"></script>
+<script src="livestatus.js"></script>
+<script src="extras.js"></script>
+<script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('sw.js').catch(() => {});
+    }
+</script>
+</body>
+</html>

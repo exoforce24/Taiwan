@@ -45,18 +45,19 @@ window.TRIP = (function () {
             ],
         },
         {
-            day: 2, date: '2026-10-31', phase: 'taipei', title: 'Palace Museum & Taipei 101',
+            day: 2, date: '2026-10-31', phase: 'taipei', title: 'Taipei 101 café view & Palace Museum',
             stay: 'Taipei hotel',
             plan: [
-                ['Morning', 'National Palace Museum: Jadeite Cabbage and Meat-shaped Stone. Lifts throughout; tea house for a sit-down break.'],
-                ['Lunch', 'Din Tai Fung (get a queue ticket on the app).'],
-                ['Afternoon', 'Taipei 101 observatory (express lift, no climbing). Xinyi malls for an air-conditioned rest.'],
-                ['Evening', 'Early night. Elephant Mountain is skipped (steep stairs).'],
+                ['Morning', 'Taipei 101 view the cheap way: Simple Kaffa Sola café on the 88th floor instead of the paid observatory. Go for the 10:00 opening (Saturday queues get long). Use the office-tower lobby near MRT Taipei 101 exit 4 (by the LOVE sculpture), get a ticket at reception, then lifts up. Takeaway is min. NT$240 per person and gets you the standing view area.'],
+                ['Lunch', 'Din Tai Fung at Taipei 101 B1 (get a queue ticket on the app).'],
+                ['Afternoon', 'National Palace Museum: Jadeite Cabbage and Meat-shaped Stone. Lifts throughout; tea house for a sit-down break.'],
+                ['Evening', 'Ginger duck hotpot (薑母鴨) dinner in Zhongshan. The broth is cooked with rice wine, so ask for a no-wine (不加酒) broth for her or let her skip the soup.'],
             ],
             places: [
                 { name: 'National Palace Museum', lat: 25.1024, lng: 121.5485, type: 'activity', desc: 'Imperial collection' },
-                { name: 'Din Tai Fung (Xinyi Rd)', lat: 25.0336, lng: 121.5300, type: 'dining', desc: 'Xiao long bao' },
-                { name: 'Taipei 101', lat: 25.0340, lng: 121.5645, type: 'activity', desc: 'Observatory by lift' },
+                { name: 'Din Tai Fung (Taipei 101)', lat: 25.0338, lng: 121.5646, type: 'dining', desc: 'Xiao long bao' },
+                { name: 'Simple Kaffa Sola (Taipei 101, 88F)', lat: 25.0340, lng: 121.5645, type: 'dining', desc: 'Coffee with the 101 view' },
+                { name: 'Ginger duck hotpot, Zhongshan', lat: 25.0526, lng: 121.5204, type: 'dining', desc: 'Ask for no-wine broth' },
             ],
         },
         {

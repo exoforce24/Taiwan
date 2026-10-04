@@ -24,7 +24,7 @@
         <p class="hero-flag">&#127982;</p>
         <h1 class="hero-title">Our Taiwan Trip</h1>
         <p class="hero-subtitle">October 30 &mdash; November 9, 2026</p>
-        <p class="hero-route">Singapore &rarr; Taipei &rarr; Taichung &rarr; Alishan &rarr; Tainan &rarr; Kaohsiung &rarr; Singapore</p>
+        <p class="hero-route">Singapore &rarr; Taipei &rarr; Taichung &rarr; Alishan &rarr; Taipei &rarr; Singapore</p>
         <div class="countdown" id="countdown">
             <div class="countdown-item"><span id="cd-days">--</span><small>days</small></div>
             <div class="countdown-item"><span id="cd-hours">--</span><small>hours</small></div>
@@ -48,10 +48,9 @@
 <!-- Trip Stats Bar -->
 <section class="stats-bar">
     <div class="stat"><span class="stat-num">11</span><span class="stat-label">Days</span></div>
-    <div class="stat"><span class="stat-num">5</span><span class="stat-label">Cities</span></div>
-    <div class="stat"><span class="stat-num">6</span><span class="stat-label">Night Markets</span></div>
+    <div class="stat"><span class="stat-num">3</span><span class="stat-label">Cities</span></div>
+    <div class="stat"><span class="stat-num">3</span><span class="stat-label">Night Markets</span></div>
     <div class="stat"><span class="stat-num">2,216</span><span class="stat-label">m Alishan</span></div>
-    <div class="stat"><span class="stat-num">1</span><span class="stat-label">Sea of Clouds</span></div>
 </section>
 
 <!-- Live Trip Status (only visible during trip) -->
@@ -91,11 +90,12 @@
 
 <!-- Quick Nav -->
 <nav class="quick-nav" id="quick-nav">
-    <a href="#book-now">Book</a>
+    <a href="#itinerary">Itinerary</a>
     <a href="#map-section">Map</a>
     <a href="#flights">Flights</a>
-    <a href="#itinerary">Itinerary</a>
     <a href="#weather">Weather</a>
+    <a href="#book-now">Book</a>
+    <a href="#pregnancy">Pregnancy</a>
     <a href="#markets">Markets</a>
     <a href="#packing">Packing</a>
     <a href="#tips">Tips</a>
@@ -103,12 +103,12 @@
     <a href="#emergency">SOS</a>
 </nav>
 
-<!-- Book Now -->
-<section class="section" id="book-now">
+<!-- Itinerary -->
+<section class="section itinerary-section" id="itinerary">
     <div class="container">
-        <h2 class="section-title">&#128680; Book Now</h2>
-        <p class="section-sub">The trip is close. Alishan rooms and forest railway seats go first.</p>
-        <div class="checklist" data-list="booknow"></div>
+        <h2 class="section-title">&#128467;&#65039; Day-by-Day Itinerary</h2>
+        <div class="phase-chips" id="phase-chips"></div>
+        <div class="days" id="days"></div>
     </div>
 </section>
 
@@ -119,6 +119,7 @@
         <div class="map-filters" id="map-filters"></div>
         <div id="trip-map" class="trip-map"></div>
         <div class="map-legend" id="map-legend"></div>
+        <p class="section-sub map-hint">On a phone, swipe over the map to keep scrolling the page. Pinch to zoom and tap a pin for details.</p>
     </div>
 </section>
 
@@ -130,21 +131,30 @@
     </div>
 </section>
 
-<!-- Itinerary -->
-<section class="section itinerary-section" id="itinerary">
-    <div class="container">
-        <h2 class="section-title">&#128467;&#65039; Day-by-Day Itinerary</h2>
-        <div class="phase-chips" id="phase-chips"></div>
-        <div class="days" id="days"></div>
-    </div>
-</section>
-
 <!-- Weather -->
 <section class="section" id="weather">
     <div class="container">
         <h2 class="section-title">&#127780;&#65039; Live Weather</h2>
-        <p class="section-sub">Current conditions in each base. Early November: 22&ndash;28&nbsp;&deg;C on the coast, 5&ndash;15&nbsp;&deg;C up in Alishan.</p>
+        <p class="section-sub">Current conditions in each base. Early November: 22&ndash;28&nbsp;&deg;C in Taipei and Taichung, 5&ndash;15&nbsp;&deg;C up in Alishan.</p>
         <div class="weather-grid" id="weather-grid"></div>
+    </div>
+</section>
+
+<!-- Book Now -->
+<section class="section" id="book-now">
+    <div class="container">
+        <h2 class="section-title">&#128680; Book Now</h2>
+        <p class="section-sub">The trip is close. Alishan rooms and forest railway seats go first.</p>
+        <div class="checklist" data-list="booknow"></div>
+    </div>
+</section>
+
+<!-- Pregnancy -->
+<section class="section" id="pregnancy">
+    <div class="container">
+        <h2 class="section-title">&#129328; Pregnancy Prep</h2>
+        <p class="section-sub">Easy pace, no long stair climbs, fully cooked food, and repellent every day.</p>
+        <div class="checklist" data-list="pregnancy"></div>
     </div>
 </section>
 

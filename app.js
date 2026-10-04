@@ -59,6 +59,32 @@
         ).join('');
     });
 
+    // Collapsible checklist sections with a done/total count in the title
+    const COLLAPSE_KEY = 'taiwan-trip-collapsed';
+    const collapsed = Object.assign({ predeparture: true, packing: true, souvenirs: true }, load(COLLAPSE_KEY));
+    document.querySelectorAll('.checklist[data-list]').forEach(el => {
+        const title = el.closest('.container').querySelector('.section-title');
+        if (!title) return;
+        const key = el.dataset.list;
+        const section = el.closest('.section');
+        title.classList.add('collapsible');
+        title.setAttribute('role', 'button');
+        title.setAttribute('tabindex', '0');
+        title.insertAdjacentHTML('beforeend', `<span class="list-count" data-count="${esc(key)}"></span><span class="chevron" aria-hidden="true">&#9662;</span>`);
+        const apply = () => {
+            section.classList.toggle('collapsed', !!collapsed[key]);
+            title.setAttribute('aria-expanded', String(!collapsed[key]));
+        };
+        const toggle = () => {
+            collapsed[key] = !collapsed[key];
+            save(COLLAPSE_KEY, collapsed);
+            apply();
+        };
+        title.addEventListener('click', toggle);
+        title.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+        apply();
+    });
+
     // ===== FLIGHTS =====
     document.getElementById('flight-grid').innerHTML = T.flights.map(f => `
         <div class="card flight-card">
@@ -90,6 +116,8 @@
                     ${d.plan.map(([when, what]) => `<li><strong>${esc(when)}</strong><span>${esc(what)}</span></li>`).join('')}
                 </ul>
                 <p class="day-stay">&#127976; ${esc(d.stay)}</p>
+                ${d.places && d.places.length ? `<div class="day-places">${d.places.map(pl =>
+                    `<a class="place-link" href="https://www.google.com/maps/search/?api=1&query=${pl.lat},${pl.lng}" target="_blank" rel="noopener">&#128205; ${esc(pl.name)}</a>`).join('')}</div>` : ''}
                 <div class="day-notes"><textarea data-note="day-${d.day}" rows="2" placeholder="Notes for day ${d.day}..."></textarea></div>
             </div>
         </article>`).join('');
@@ -146,6 +174,13 @@
         document.getElementById('progress-bar').style.width = Math.max(pct, 2) + '%';
         document.getElementById('progress-text').textContent = pct + '%';
         document.getElementById('progress-detail').textContent = `${done} of ${total} items checked`;
+        document.querySelectorAll('.list-count[data-count]').forEach(badge => {
+            const list = document.querySelector(`.checklist[data-list="${badge.dataset.count}"]`);
+            const n = list.querySelectorAll('input[type="checkbox"]').length;
+            const d = list.querySelectorAll('input[type="checkbox"]:checked').length;
+            badge.textContent = `${d}/${n}`;
+            badge.classList.toggle('complete', n > 0 && d === n);
+        });
     }
 
     checkboxes.forEach(cb => {
@@ -170,6 +205,24 @@
             save(NOTES_KEY, all);
         });
     });
+
+    // ===== QUICK NAV: highlight the section in view =====
+    const navLinks = [...document.querySelectorAll('.quick-nav a')];
+    if ('IntersectionObserver' in window && navLinks.length) {
+        const byId = new Map(navLinks.map(a => [a.getAttribute('href').slice(1), a]));
+        const io = new IntersectionObserver(entries => {
+            entries.forEach(en => {
+                if (!en.isIntersecting) return;
+                const link = byId.get(en.target.id);
+                if (!link) return;
+                navLinks.forEach(a => a.classList.toggle('active', a === link));
+                // Only move the bar sideways; scrollIntoView here interrupts the page's own scrolling on phones
+                const nav = link.parentElement;
+                nav.scrollTo({ left: link.offsetLeft - (nav.clientWidth - link.offsetWidth) / 2, behavior: 'smooth' });
+            });
+        }, { rootMargin: '-45% 0px -50% 0px' });
+        byId.forEach((_, id) => { const sec = document.getElementById(id); if (sec) io.observe(sec); });
+    }
 
     // Shared with sync.js and livestatus.js
     window.TripApp = { CHECKLIST_KEY, NOTES_KEY, updateProgress, fmtDate, esc };

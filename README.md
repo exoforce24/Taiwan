@@ -1,7 +1,7 @@
 # Taiwan
 
 Trip dashboard for our Taiwan trip, 30 Oct – 9 Nov 2026:
-Taipei → Taichung → Alishan → back to Taipei (pregnancy-friendly pace).
+Taipei → Taichung → Sun Moon Lake → Chiayi → Alishan → back to Taipei (pregnancy-friendly pace).
 
 A static site (no build step) in the same style as the Canada trip site: countdown, live "today" view during the trip, map, day-by-day itinerary with notes, checklists, weather, SGD/TWD converter and emergency numbers. Works offline once opened and can be added to the phone home screen.
 

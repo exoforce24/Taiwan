@@ -14,6 +14,8 @@ window.TRIP = (function () {
     const phases = {
         taipei:    { name: 'Taipei',    color: '#e53950' },
         taichung:  { name: 'Taichung',  color: '#f5a623' },
+        sunmoon:   { name: 'Sun Moon Lake', color: '#26a69a' },
+        chiayi:    { name: 'Chiayi',    color: '#ab47bc' },
         alishan:   { name: 'Alishan',   color: '#4caf50' },
         flight:    { name: 'Home',      color: '#42a5f5' },
     };
@@ -22,6 +24,8 @@ window.TRIP = (function () {
     const cities = {
         taipei:    { lat: 25.04, lon: 121.56, name: 'Taipei' },
         taichung:  { lat: 24.15, lon: 120.67, name: 'Taichung' },
+        sunmoon:   { lat: 23.87, lon: 120.92, name: 'Sun Moon Lake' },
+        chiayi:    { lat: 23.48, lon: 120.45, name: 'Chiayi' },
         alishan:   { lat: 23.51, lon: 120.80, name: 'Alishan' },
     };
 
@@ -79,7 +83,7 @@ window.TRIP = (function () {
         },
         {
             day: 4, date: '2026-11-02', phase: 'taichung', title: 'High Speed Rail to Taichung',
-            stay: 'Taichung hotel, 2 nights (to book) — near Taichung HSR or Xitun',
+            stay: 'Taichung hotel, 1 night (to book) — near Taichung HSR or Xitun, with parking',
             plan: [
                 ['Morning', 'Early HSR Taipei → Taichung (~1 h). Pick up the M4. Rainbow Village is 10 min away: a small, flat, hand-painted village.'],
                 ['Lunch', 'Moment Cafe, a cat café garden near Rainbow Village. She shouldn\'t handle the cats (toxoplasmosis); wash hands before eating.'],
@@ -96,63 +100,66 @@ window.TRIP = (function () {
             ],
         },
         {
-            day: 5, date: '2026-11-03', phase: 'taichung', title: 'Comic Museum & Sun Moon Lake',
-            stay: 'Taichung hotel',
+            day: 5, date: '2026-11-03', phase: 'sunmoon', title: 'Comic Museum, then a night at Sun Moon Lake',
+            stay: 'Sun Moon Lake hotel, 1 night (to book) — Ita Thao or Shuishe, with parking',
             plan: [
-                ['Morning', 'National Taiwan Museum of Comics at its 10:00 opening (old police dorms, West District; closed Mondays). About an hour.'],
+                ['Morning', 'Check out. National Taiwan Museum of Comics at its 10:00 opening (old police dorms, West District; closed Mondays). About an hour.'],
                 ['Midday', 'Drive to Sun Moon Lake (~1 h 15, Freeway 6). The last stretch winds a little, so take it gently. Late lunch at Ita Thao.'],
-                ['Afternoon', 'Lake boat between Ita Thao, Xuanguang and Shuishe piers, then the Sun Moon Lake Ropeway if time allows (check last ride). Flat lakeside path near Shuishe.'],
-                ['Evening', 'Drive back to Taichung before dark. Easy dinner near the hotel and an early night.'],
+                ['Afternoon', 'Check in, rest, then the lake boat between Ita Thao, Xuanguang and Shuishe piers, or the Sun Moon Lake Ropeway (check last ride).'],
+                ['Evening', 'Sunset on the flat lakeside path near Shuishe, then dinner at Ita Thao. No driving after dark on the mountain road.'],
             ],
             places: [
                 { name: 'National Taiwan Museum of Comics', lat: 24.1375, lng: 120.6770, type: 'activity', desc: 'Closed Mondays' },
-                { name: 'Shuishe Pier', lat: 23.8665, lng: 120.9115, type: 'activity', desc: 'Boat & lakeside path' },
-                { name: 'Ita Thao', lat: 23.8507, lng: 120.9338, type: 'dining', desc: 'Lunch' },
+                { name: 'Shuishe Pier', lat: 23.8665, lng: 120.9115, type: 'stay', desc: 'Lakeside night' },
+                { name: 'Ita Thao', lat: 23.8507, lng: 120.9338, type: 'dining', desc: 'Lunch & dinner' },
                 { name: 'Sun Moon Lake Ropeway', lat: 23.8519, lng: 120.9289, type: 'activity', desc: 'Cable car views' },
             ],
         },
         {
-            day: 6, date: '2026-11-04', phase: 'alishan', title: 'Up the Alishan Forest Railway',
-            stay: 'Alishan hotel, 2 nights (BOOK FIRST) — inside the forest recreation area',
+            day: 6, date: '2026-11-04', phase: 'chiayi', title: 'Lake morning, return the M4, on to Chiayi',
+            stay: 'Chiayi hotel, 1 night (to book) — walking distance to Chiayi TRA station',
             plan: [
-                ['Early', 'Return the M4 to the Taichung shop as soon as it opens. HSR Taichung → Chiayi (~25 min), then taxi to Chiayi TRA station (~25 min). Aim to be there by 9:30.'],
-                ['Morning', 'Leave big bags at a Chiayi hotel or locker; take only 2 nights\' things up. Alishan Express No. 5 leaves Chiayi 10:00 (the only train that goes all the way up).'],
-                ['Midday', 'Lunch during the 65-min stop at Fenqihu (famous railway bento).'],
-                ['Afternoon', 'Arrive Alishan 14:56. Check in and rest. Short, flat stroll near the hotel only: it is 2,200 m up, so let her body adjust.'],
-                ['Evening', 'Early dinner and early night. It gets cold (5–10 °C), so wear the warm layers.'],
+                ['Morning', 'Slow lakeside morning (the lake is calmest early). Leave by ~10:00 and drive back to Taichung (~1 h 15).'],
+                ['Midday', 'Return the M4 to the Taichung shop (two days with the car). Taxi to Taichung HSR, HSR to Chiayi (~25 min).'],
+                ['Afternoon', 'Palace Museum Southern Branch, a short taxi from Chiayi HSR: flat, air-conditioned, quiet (closed Mondays). Then taxi into Chiayi and check in.'],
+                ['Evening', 'Stroll Hinoki Village (Japanese-era wooden houses) and Wenhua Road Night Market for turkey rice (火雞肉飯), Chiayi\'s famous dish.'],
             ],
             places: [
-                { name: 'Chiayi Station', lat: 23.4791, lng: 120.4410, type: 'transport', desc: 'Forest railway starts here' },
-                { name: 'Alishan Station', lat: 23.5100, lng: 120.8050, type: 'stay', desc: 'Two nights in the mountains' },
+                { name: 'Palace Museum Southern Branch', lat: 23.4740, lng: 120.2900, type: 'activity', desc: 'Near Chiayi HSR' },
+                { name: 'Chiayi HSR', lat: 23.4594, lng: 120.3233, type: 'transport', desc: 'From Taichung' },
+                { name: 'Hinoki Village', lat: 23.4870, lng: 120.4560, type: 'activity', desc: 'Japanese-era wooden houses' },
+                { name: 'Wenhua Road Night Market', lat: 23.4790, lng: 120.4490, type: 'market', desc: 'Turkey rice' },
             ],
         },
         {
-            day: 7, date: '2026-11-05', phase: 'alishan', title: 'A slow full day in Alishan',
-            stay: 'Alishan hotel',
+            day: 7, date: '2026-11-05', phase: 'alishan', title: 'Up the Alishan Forest Railway',
+            stay: 'Alishan hotel, 1 night (BOOK FIRST) — inside the forest recreation area',
             plan: [
-                ['Optional', 'Zhushan sunrise train (~4:30–5:00). Only if she feels up to it; there is a second chance tomorrow.'],
-                ['Morning', 'Giant Trees Trail boardwalk and Sister Ponds, at an easy pace with plenty of rests.'],
-                ['Lunch', 'Simple hot lunch near the station. Alishan high-mountain tea (decaf options exist) to take home.'],
-                ['Afternoon', 'Nap at the hotel. Later, Zhaoping Station and Shouzhen Temple are flat and close by.'],
-                ['Evening', 'Watch the sea of clouds roll in at dusk if the weather is right. Early night.'],
+                ['Morning', 'Sleep in and walk to Chiayi station. Leave big bags at the Chiayi hotel; take only an overnight bag up. Peek at the old steam engines at the Railway Garage Park first if there is time. Alishan Express No. 5 leaves 10:00 (the only train that goes all the way up).'],
+                ['Midday', 'Lunch during the 65-min stop at Fenqihu (famous railway bento).'],
+                ['Afternoon', 'Arrive Alishan 14:56. Check in and rest a little: it is 2,200 m up, so let her body adjust. Later, a gentle stroll to Zhaoping Station and Shouzhen Temple (flat, close by).'],
+                ['Evening', 'Watch the sea of clouds at dusk if the weather is right. Early dinner and early night; it gets cold (5–10 °C).'],
             ],
             places: [
-                { name: 'Giant Trees Trail', lat: 23.5145, lng: 120.8060, type: 'activity', desc: 'Boardwalk, ancient cypresses' },
-                { name: 'Sister Ponds', lat: 23.5165, lng: 120.8040, type: 'activity', desc: 'Forest pond walk' },
+                { name: 'Chiayi Station', lat: 23.4791, lng: 120.4410, type: 'transport', desc: 'Forest railway starts here' },
+                { name: 'Alishan Railway Garage Park', lat: 23.4880, lng: 120.4570, type: 'activity', desc: 'Old steam trains' },
+                { name: 'Alishan Station', lat: 23.5100, lng: 120.8050, type: 'stay', desc: 'A night in the mountains' },
                 { name: 'Zhaoping Station', lat: 23.5120, lng: 120.8090, type: 'activity', desc: 'Flat, views, cherry trees' },
-                { name: 'Zhushan Sunrise Viewpoint', lat: 23.5134, lng: 120.8178, type: 'activity', desc: 'Optional sunrise' },
             ],
         },
         {
             day: 8, date: '2026-11-06', phase: 'taipei', title: 'Alishan morning, back to Taipei',
             stay: 'Taipei hotel, 3 nights (to book)',
             plan: [
-                ['Optional', 'Second chance at the Zhushan sunrise if yesterday was cloudy.'],
-                ['Morning', 'Slow breakfast and a last forest stroll.'],
-                ['Midday', 'Alishan Express No. 8 leaves Alishan 11:50, arrives Chiayi 15:45. Collect bags, taxi to Chiayi HSR (~20 min).'],
+                ['Optional', 'Zhushan sunrise train (~4:30–5:00), only if she feels up to it.'],
+                ['Morning', 'After breakfast, the Giant Trees Trail boardwalk and Sister Ponds at an easy pace. Pick up Alishan tea near the station.'],
+                ['Midday', 'Alishan Express No. 8 leaves Alishan 11:50, arrives Chiayi 15:45. Collect bags from the Chiayi hotel, taxi to Chiayi HSR (~20 min).'],
                 ['Evening', 'HSR Chiayi → Taipei (~1.5 h). Check in and rest.'],
             ],
             places: [
+                { name: 'Zhushan Sunrise Viewpoint', lat: 23.5134, lng: 120.8178, type: 'activity', desc: 'Optional sunrise' },
+                { name: 'Giant Trees Trail', lat: 23.5145, lng: 120.8060, type: 'activity', desc: 'Boardwalk, ancient cypresses' },
+                { name: 'Sister Ponds', lat: 23.5165, lng: 120.8040, type: 'activity', desc: 'Forest pond walk' },
                 { name: 'Chiayi HSR', lat: 23.4594, lng: 120.3233, type: 'transport', desc: 'To Taipei' },
             ],
         },
@@ -211,21 +218,24 @@ window.TRIP = (function () {
         { name: 'Raohe (Taipei)', days: 'Daily', note: 'Day 1' },
         { name: 'Ningxia (Taipei)', days: 'Daily', note: 'Day 3' },
         { name: 'Fengjia (Taichung)', days: 'Daily', note: 'Day 4' },
+        { name: 'Wenhua Road (Chiayi)', days: 'Daily', note: 'Day 6' },
     ];
 
     const checklists = {
         booknow: {
             title: 'Book Now', icon: '🚨',
             items: [
-                ['bk-alishan-hotel', 'Alishan hotel, 2 nights: Wed 4 & Thu 5 Nov (sells out first)'],
-                ['bk-alishan-train', 'Alishan Forest Railway: Express No. 5 up Wed 4 Nov (10:00), No. 8 down Fri 6 Nov (11:50)'],
+                ['bk-alishan-hotel', 'Alishan hotel, 1 night: Thu 5 Nov (sells out first)'],
+                ['bk-alishan-train', 'Alishan Forest Railway: Express No. 5 up Thu 5 Nov (10:00), No. 8 down Fri 6 Nov (11:50)'],
                 ['bk-flight-out', 'Flight SIN → TPE, Fri 30 Oct'],
                 ['bk-flight-home', 'Flight TPE → SIN, Mon 9 Nov'],
                 ['bk-hotel-tpe', 'Taipei hotel, 3 nights (30 Oct – 2 Nov)'],
-                ['bk-hotel-txg', 'Taichung hotel, 2 nights (2 – 4 Nov)'],
+                ['bk-hotel-txg', 'Taichung hotel, 1 night (Mon 2 Nov)'],
+                ['bk-hotel-sml', 'Sun Moon Lake hotel, 1 night (Tue 3 Nov), with parking'],
+                ['bk-hotel-cyi', 'Chiayi hotel near the TRA station, 1 night (Wed 4 Nov)'],
                 ['bk-hotel-tpe2', 'Taipei hotel, 3 nights (6 – 9 Nov)'],
-                ['bk-hsr', 'HSR seats: Taipei → Taichung (2 Nov), Taichung → Chiayi (4 Nov, ~8:30), Chiayi → Taipei (6 Nov)'],
-                ['bk-car', 'Rental car Mon 2 – Wed 4 Nov (Taichung shop); check it opens early enough on Wed 4 Nov'],
+                ['bk-hsr', 'HSR seats: Taipei → Taichung (2 Nov), Taichung → Chiayi (Wed 4 Nov, early afternoon), Chiayi → Taipei (Fri 6 Nov, ~16:30)'],
+                ['bk-car', 'M4 rental Mon 2 – Wed 4 Nov (Taichung shop), returned around midday Wed 4 Nov'],
                 ['bk-driver', 'Private driver for Shifen + Jiufen (Sat 7 Nov), optional'],
                 ['bk-insurance', 'Travel insurance that covers pregnancy'],
             ],
@@ -233,7 +243,7 @@ window.TRIP = (function () {
         pregnancy: {
             title: 'Pregnancy Prep', icon: '🤰',
             items: [
-                ['pg-doctor', 'Doctor\'s OK for the trip, including 2 nights in Alishan at 2,200 m'],
+                ['pg-doctor', 'Doctor\'s OK for the trip, including a night in Alishan at 2,200 m'],
                 ['pg-airline', 'Check both airlines\' pregnancy rules; get a fit-to-fly letter if needed'],
                 ['pg-records', 'Copy of antenatal notes / scan reports (phone + paper)'],
                 ['pg-meds', 'Prenatal vitamins and any prescribed meds, in carry-on'],

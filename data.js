@@ -55,7 +55,7 @@ window.TRIP = (function () {
                 ['Morning', 'Taipei 101 view the cheap way: Simple Kaffa Sola café on the 88th floor instead of the paid observatory. Go for the 10:00 opening (Saturday queues get long). Use the office-tower lobby near MRT Taipei 101 exit 4 (by the LOVE sculpture), get a ticket at reception, then lifts up. Takeaway is min. NT$240 per person and gets you the standing view area.'],
                 ['Lunch', 'Din Tai Fung at Taipei 101 B1 (get a queue ticket on the app).'],
                 ['Afternoon', 'National Palace Museum: Jadeite Cabbage and Meat-shaped Stone. Lifts throughout; tea house for a sit-down break.'],
-                ['Evening', 'Ginger duck hotpot (薑母鴨) dinner in Zhongshan. The broth is cooked with rice wine, so ask for a no-wine (不加酒) broth for her or let her skip the soup.'],
+                ['Evening', 'Ginger duck hotpot (薑母鴨) dinner in Zhongshan: Duck Master (霸味薑母鴨) is a local favourite with charcoal-heated pots. The broth is cooked with rice wine and herbs, so ask for a no-wine (不加酒) broth for her or let her skip the soup.'],
             ],
             places: [
                 { name: 'National Palace Museum', lat: 25.1024, lng: 121.5485, type: 'activity', desc: 'Imperial collection' },
@@ -69,7 +69,7 @@ window.TRIP = (function () {
             stay: 'Taipei hotel',
             plan: [
                 ['Morning', 'Dihua Street and Dadaocheng: old shophouses, dried fruit, a tea house break.'],
-                ['Lunch', 'Yongkang Street: beef noodles (well done) and mango shaved ice.'],
+                ['Lunch', 'Yongkang Street: Yongkang Beef Noodle (well-done beef) and mango shaved ice at Smoothie House.'],
                 ['Afternoon', 'Huashan 1914 Creative Park: flat, shady, cafés and design shops.'],
                 ['Evening', 'Dadaocheng Wharf at sunset, then Ningxia Night Market (small, flat, food-focused).'],
             ],
@@ -88,7 +88,7 @@ window.TRIP = (function () {
                 ['Morning', 'Early HSR Taipei → Taichung (~1 h). Pick up the M4. Rainbow Village is 10 min away: a small, flat, hand-painted village.'],
                 ['Lunch', 'Moment Cafe, a cat café garden near Rainbow Village. She shouldn\'t handle the cats (toxoplasmosis); wash hands before eating.'],
                 ['Afternoon', 'Drive north (~40 min) to Zhongshe Flower Market in Houli: flower fields, lavender from late Oct. Flat paths, so stroll the near fields and sit in the café. NT$120 entry.'],
-                ['Evening', 'Fengjia Night Market (go by 5–6 pm before it packs out), then Miyahara for ice cream in the old eye clinic.'],
+                ['Evening', 'Fengjia Night Market right at opening (~5 pm) before it packs out: Minglun egg pancakes and sweet potato balls. Then Miyahara for ice cream and pineapple cakes in the old eye clinic; sit in the upstairs restaurant to skip the standing queue downstairs.'],
             ],
             places: [
                 { name: 'Taichung HSR', lat: 24.1121, lng: 120.6157, type: 'transport', desc: 'From Taipei' },
@@ -104,7 +104,7 @@ window.TRIP = (function () {
             stay: 'Sun Moon Lake hotel, 1 night (to book) — Ita Thao or Shuishe, with parking',
             plan: [
                 ['Morning', 'Check out. National Taiwan Museum of Comics at its 10:00 opening (old police dorms, West District; closed Mondays). About an hour.'],
-                ['Midday', 'Drive to Sun Moon Lake (~1 h 15, Freeway 6). The last stretch winds a little, so take it gently. Late lunch at Ita Thao.'],
+                ['Midday', 'Drive to Sun Moon Lake (~1 h 15, Freeway 6). The last stretch winds a little, so take it gently. Late lunch at Ita Thao: millet mochi and grilled wild boar sausage (make sure it is cooked through).'],
                 ['Afternoon', 'Check in, rest, then the lake boat between Ita Thao, Xuanguang and Shuishe piers, or the Sun Moon Lake Ropeway (check last ride).'],
                 ['Evening', 'Sunset on the flat lakeside path near Shuishe, then dinner at Ita Thao. No driving after dark on the mountain road.'],
             ],
@@ -122,7 +122,7 @@ window.TRIP = (function () {
                 ['Morning', 'Slow lakeside morning (the lake is calmest early). Leave by ~10:00 and drive back to Taichung (~1 h 15).'],
                 ['Midday', 'Return the M4 to the Taichung shop (two days with the car). Taxi to Taichung HSR, HSR to Chiayi (~25 min).'],
                 ['Afternoon', 'Palace Museum Southern Branch, a short taxi from Chiayi HSR: flat, air-conditioned, quiet (closed Mondays). Then taxi into Chiayi and check in.'],
-                ['Evening', 'Stroll Hinoki Village (Japanese-era wooden houses) and Wenhua Road Night Market for turkey rice (火雞肉飯), Chiayi\'s famous dish.'],
+                ['Evening', 'Stroll Hinoki Village (Japanese-era wooden houses) and Wenhua Road Night Market for turkey rice (火雞肉飯), Chiayi\'s famous dish: A-Lou Shi (阿樓師火雞肉飯, opens ~4 pm, fast queue) or A-Hong Shi (阿宏師火雞肉飯, with fried shallots and chicken oil).'],
             ],
             places: [
                 { name: 'Palace Museum Southern Branch', lat: 23.4740, lng: 120.2900, type: 'activity', desc: 'Near Chiayi HSR' },
@@ -136,7 +136,7 @@ window.TRIP = (function () {
             stay: 'Alishan hotel, 1 night (BOOK FIRST) — inside the forest recreation area',
             plan: [
                 ['Morning', 'Sleep in and walk to Chiayi station. Leave big bags at the Chiayi hotel; take only an overnight bag up. Peek at the old steam engines at the Railway Garage Park first if there is time. Alishan Express No. 5 leaves 10:00 (the only train that goes all the way up).'],
-                ['Midday', 'Lunch during the 65-min stop at Fenqihu (famous railway bento).'],
+                ['Midday', 'Lunch during the 65-min stop at Fenqihu: the famous railway bento from the Fenchihu Hotel.'],
                 ['Afternoon', 'Arrive Alishan 14:56. Check in and rest a little: it is 2,200 m up, so let her body adjust. Later, a gentle stroll to Zhaoping Station and Shouzhen Temple (flat, close by).'],
                 ['Evening', 'Watch the sea of clouds at dusk if the weather is right. Early dinner and early night; it gets cold (5–10 °C).'],
             ],
@@ -154,7 +154,7 @@ window.TRIP = (function () {
                 ['Optional', 'Zhushan sunrise train (~4:30–5:00), only if she feels up to it.'],
                 ['Morning', 'After breakfast, the Giant Trees Trail boardwalk and Sister Ponds at an easy pace. Pick up Alishan tea near the station.'],
                 ['Midday', 'Alishan Express No. 8 leaves Alishan 11:50, arrives Chiayi 15:45. Collect bags from the Chiayi hotel, taxi to Chiayi HSR (~20 min).'],
-                ['Evening', 'HSR Chiayi → Taipei (~1.5 h). Check in, then (if she has energy) dinner at Raohe Night Market for the pepper buns at the gate.'],
+                ['Evening', 'HSR Chiayi → Taipei (~1.5 h). Check in, then (if she has energy) dinner at Raohe Night Market. The pepper bun queue at the gate (福州世祖胡椒餅) often runs 30+ min, so she sits at another stall while you queue.'],
             ],
             places: [
                 { name: 'Zhushan Sunrise Viewpoint', lat: 23.5134, lng: 120.8178, type: 'activity', desc: 'Optional sunrise' },

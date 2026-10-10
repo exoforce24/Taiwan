@@ -15,10 +15,20 @@
     const typeIcons = { stay: '🏨', activity: '📍', dining: '🍜', market: '🏮', transport: '🚄' };
 
     const map = L.map('trip-map', { scrollWheelZoom: false, dragging: !L.Browser.mobile }).setView([23.9, 120.9], 7);
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-        attribution: '&copy; OpenStreetMap &copy; CARTO',
+    // Keyless tiles: OpenStreetMap first, Esri if OSM keeps failing
+    const osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors',
         maxZoom: 19,
     }).addTo(map);
+    let tileErrors = 0;
+    osm.on('tileerror', () => {
+        if (++tileErrors !== 4) return;
+        map.removeLayer(osm);
+        L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
+            attribution: 'Tiles &copy; Esri',
+            maxZoom: 19,
+        }).addTo(map);
+    });
 
     const layers = {};
     const route = [];

@@ -37,15 +37,15 @@ window.TRIP = (function () {
             day: 1, date: '2026-10-30', phase: 'taipei', title: 'Arrive in Taipei',
             stay: 'Taipei hotel, 3 nights (to book) — near Taipei Main or Zhongshan MRT',
             plan: [
+                ['Afternoon', 'EVA Air BR216 leaves Singapore 15:45 (Changi). Eat on board; it lands around 20:15.'],
                 ['Arrive', 'Land at Taoyuan (TPE). Buy a SIM/eSIM and an EasyCard at arrivals.'],
-                ['Transfer', 'Airport MRT express to Taipei Main Station (~40 min). Use the priority seats.'],
-                ['Evening', 'Gentle stroll around Ximending, then dinner at Raohe Night Market (pepper buns at the gate).'],
+                ['Transfer', 'Airport MRT express to Taipei Main Station (~40 min; use the priority seats), or a taxi if she is tired.'],
+                ['Late', 'Check in, a late snack from 7-Eleven or a stroll round Ximending if you still have energy, then sleep.'],
             ],
             places: [
                 { name: 'Taoyuan Airport (TPE)', lat: 25.0797, lng: 121.2342, type: 'transport', desc: 'Arrival from Singapore' },
                 { name: 'Taipei Main Station', lat: 25.0478, lng: 121.5170, type: 'stay', desc: 'Base for 3 nights' },
-                { name: 'Ximending', lat: 25.0421, lng: 121.5081, type: 'activity', desc: 'Evening stroll' },
-                { name: 'Raohe Night Market', lat: 25.0509, lng: 121.5775, type: 'market', desc: 'Pepper buns' },
+                { name: 'Ximending', lat: 25.0421, lng: 121.5081, type: 'activity', desc: 'Late stroll, optional' },
             ],
         },
         {
@@ -154,13 +154,14 @@ window.TRIP = (function () {
                 ['Optional', 'Zhushan sunrise train (~4:30–5:00), only if she feels up to it.'],
                 ['Morning', 'After breakfast, the Giant Trees Trail boardwalk and Sister Ponds at an easy pace. Pick up Alishan tea near the station.'],
                 ['Midday', 'Alishan Express No. 8 leaves Alishan 11:50, arrives Chiayi 15:45. Collect bags from the Chiayi hotel, taxi to Chiayi HSR (~20 min).'],
-                ['Evening', 'HSR Chiayi → Taipei (~1.5 h). Check in and rest.'],
+                ['Evening', 'HSR Chiayi → Taipei (~1.5 h). Check in, then (if she has energy) dinner at Raohe Night Market for the pepper buns at the gate.'],
             ],
             places: [
                 { name: 'Zhushan Sunrise Viewpoint', lat: 23.5134, lng: 120.8178, type: 'activity', desc: 'Optional sunrise' },
                 { name: 'Giant Trees Trail', lat: 23.5145, lng: 120.8060, type: 'activity', desc: 'Boardwalk, ancient cypresses' },
                 { name: 'Sister Ponds', lat: 23.5165, lng: 120.8040, type: 'activity', desc: 'Forest pond walk' },
                 { name: 'Chiayi HSR', lat: 23.4594, lng: 120.3233, type: 'transport', desc: 'To Taipei' },
+                { name: 'Raohe Night Market', lat: 25.0509, lng: 121.5775, type: 'market', desc: 'Pepper buns' },
             ],
         },
         {
@@ -178,20 +179,20 @@ window.TRIP = (function () {
             ],
         },
         {
-            day: 10, date: '2026-11-08', phase: 'taipei', title: 'Beitou walk & Tamsui sunset',
+            day: 10, date: '2026-11-08', phase: 'taipei', title: 'Sports car day: Yangmingshan & the north coast',
             stay: 'Taipei hotel',
             plan: [
-                ['Morning', 'Beitou: Thermal Valley viewing path and the wooden Beitou Library. Look, don\'t soak (no hot springs in pregnancy).'],
-                ['Optional', 'Swap Tamsui for a driver loop: Yangmingshan\'s flat Erziping Trail and silver grass (best in Nov), then over the hills to Tiaoshi Coast on the north coast. Look from the shore path; don\'t hop the slippery boulders. Skip Xiaoyoukeng (sulphur fumes) and the Qixing climb.'],
-                ['Afternoon', 'MRT to Tamsui. Flat riverside promenade and Old Street snacks (cooked only).'],
-                ['Sunset', 'Fisherman\'s Wharf and Lover\'s Bridge. Pack for the flight tonight.'],
+                ['Early', 'Pick up the sports car in Taipei around 8:00 and head up Yangmingshan before the Sunday traffic builds. Comfort mode on the hill roads, and stop if she feels queasy.'],
+                ['Morning', 'Erziping Trail: flat and shady, with silver grass at its best in November. Skip Xiaoyoukeng (sulphur fumes) and the Qixing climb.'],
+                ['Midday', 'Down to Jinshan for lunch, then Tiaoshi Coast. Look from the shore path; don\'t hop the slippery boulders.'],
+                ['Afternoon', 'The fun part: west along the North Coast Highway (Provincial Hwy 2), sweeping and by the sea, past Shimen Arch to Tamsui. Stop every hour so she can stretch.'],
+                ['Sunset', 'Fisherman\'s Wharf in Tamsui, then drive back and return the car. Pack tonight and sleep early: the airport pickup is ~4:30.'],
             ],
             places: [
-                { name: 'Beitou Thermal Valley', lat: 25.1378, lng: 121.5160, type: 'activity', desc: 'View only, no soaking' },
-                { name: 'Erziping Trail (optional)', lat: 25.1866, lng: 121.5287, type: 'activity', desc: 'Flat Yangmingshan trail' },
-                { name: 'Tiaoshi Coast (optional)', lat: 25.2900, lng: 121.5470, type: 'activity', desc: 'North coast boulders, view only' },
-                { name: 'Beitou Library', lat: 25.1365, lng: 121.5065, type: 'activity', desc: 'Wooden green library' },
-                { name: 'Tamsui Old Street', lat: 25.1695, lng: 121.4390, type: 'dining', desc: 'Riverside snacks' },
+                { name: 'Erziping Trail', lat: 25.1866, lng: 121.5287, type: 'activity', desc: 'Flat Yangmingshan trail' },
+                { name: 'Jinshan Old Street', lat: 25.2220, lng: 121.6380, type: 'dining', desc: 'Lunch' },
+                { name: 'Tiaoshi Coast', lat: 25.2900, lng: 121.5470, type: 'activity', desc: 'North coast boulders, view only' },
+                { name: 'Shimen Arch', lat: 25.2930, lng: 121.5650, type: 'activity', desc: 'Sea arch, roadside stop' },
                 { name: 'Fisherman\'s Wharf', lat: 25.1830, lng: 121.4105, type: 'activity', desc: 'Sunset' },
             ],
         },
@@ -199,9 +200,9 @@ window.TRIP = (function () {
             day: 11, date: '2026-11-09', phase: 'flight', title: 'Fly home',
             stay: 'Home 🇸🇬',
             plan: [
-                ['Morning', 'Relaxed breakfast. Claim the tourist VAT refund at the airport counter before check-in.'],
-                ['Transfer', 'Airport MRT express Taipei Main → Taoyuan (~40 min). Arrive 2.5 h before departure.'],
-                ['Flight', 'Nonstop TPE → SIN (~4 h 30). Compression socks and plenty of water on board.'],
+                ['Early', 'Pre-booked taxi or airport car from the hotel at ~4:30 (the Airport MRT starts too late for this flight). ~45 min to Taoyuan; be there by ~5:30.'],
+                ['Airport', 'Claim the tourist VAT refund at the counter before check-in. Breakfast airside.'],
+                ['Flight', 'EVA Air BR255 leaves Taoyuan 07:25, lands Singapore around 11:55. Compression socks and plenty of water on board.'],
             ],
             places: [
                 { name: 'Taoyuan Airport (TPE)', lat: 25.0797, lng: 121.2342, type: 'transport', desc: 'Nonstop to Singapore' },
@@ -210,12 +211,12 @@ window.TRIP = (function () {
     ];
 
     const flights = [
-        { id: 'fl-out', label: 'Outbound', route: 'SIN → TPE', date: 'Fri 30 Oct', detail: 'Singapore → Taipei Taoyuan. Nonstop ~4 h 30. Fill in flight no. & times once booked.' },
-        { id: 'fl-home', label: 'Return', route: 'TPE → SIN', date: 'Mon 9 Nov', detail: 'Taipei Taoyuan → Singapore. Many nonstops daily. Check the airline\'s pregnancy rules (doctor\'s letter often needed after ~28 weeks).' },
+        { id: 'fl-out', label: 'Outbound', route: 'SIN → TPE', date: 'Fri 30 Oct', detail: 'EVA Air BR216, Singapore 15:45 → Taipei Taoyuan ~20:15. Booked.' },
+        { id: 'fl-home', label: 'Return', route: 'TPE → SIN', date: 'Mon 9 Nov', detail: 'EVA Air BR255, Taipei Taoyuan 07:25 → Singapore ~11:55. Booked. Check EVA\'s pregnancy rules and carry a fit-to-fly letter to be safe.' },
     ];
 
     const nightMarkets = [
-        { name: 'Raohe (Taipei)', days: 'Daily', note: 'Day 1' },
+        { name: 'Raohe (Taipei)', days: 'Daily', note: 'Day 8' },
         { name: 'Ningxia (Taipei)', days: 'Daily', note: 'Day 3' },
         { name: 'Fengjia (Taichung)', days: 'Daily', note: 'Day 4' },
         { name: 'Wenhua Road (Chiayi)', days: 'Daily', note: 'Day 6' },
@@ -227,8 +228,9 @@ window.TRIP = (function () {
             items: [
                 ['bk-alishan-hotel', 'Alishan hotel, 1 night: Thu 5 Nov (sells out first)'],
                 ['bk-alishan-train', 'Alishan Forest Railway: Express No. 5 up Thu 5 Nov (10:00), No. 8 down Fri 6 Nov (11:50)'],
-                ['bk-flight-out', 'Flight SIN → TPE, Fri 30 Oct'],
-                ['bk-flight-home', 'Flight TPE → SIN, Mon 9 Nov'],
+                ['bk-flight-out', 'Flight SIN → TPE, Fri 30 Oct (EVA BR216, booked)'],
+                ['bk-flight-home', 'Flight TPE → SIN, Mon 9 Nov (EVA BR255, booked)'],
+                ['bk-airport-car', 'Airport taxi/car from the Taipei hotel at ~4:30, Mon 9 Nov'],
                 ['bk-hotel-tpe', 'Taipei hotel, 3 nights (30 Oct – 2 Nov)'],
                 ['bk-hotel-txg', 'Taichung hotel, 1 night (Mon 2 Nov)'],
                 ['bk-hotel-sml', 'Sun Moon Lake hotel, 1 night (Tue 3 Nov), with parking'],
@@ -237,6 +239,7 @@ window.TRIP = (function () {
                 ['bk-hsr', 'HSR seats: Taipei → Taichung (2 Nov), Taichung → Chiayi (Wed 4 Nov, early afternoon), Chiayi → Taipei (Fri 6 Nov, ~16:30)'],
                 ['bk-car', 'M4 rental Mon 2 – Wed 4 Nov (Taichung shop), returned around midday Wed 4 Nov'],
                 ['bk-driver', 'Private driver for Shifen + Jiufen (Sat 7 Nov), optional'],
+                ['bk-car2', 'Sports car rental in Taipei, Sun 8 Nov (one day; check the Sunday evening return time)'],
                 ['bk-insurance', 'Travel insurance that covers pregnancy'],
             ],
         },

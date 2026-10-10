@@ -1,6 +1,6 @@
 /* Service Worker for offline support */
 
-const CACHE_NAME = 'taiwan-trip-v17';
+const CACHE_NAME = 'taiwan-trip-v18';
 const ASSETS = [
     './',
     './index.html',
@@ -58,13 +58,15 @@ self.addEventListener('fetch', event => {
     if (url.hostname.includes('firebaseio.com') || url.hostname.includes('firebasedatabase.app')) return;
 
     // For map tiles, use cache-first with network fallback
-    if (url.hostname.includes('basemaps.cartocdn.com')) {
+    if (url.hostname === 'tile.openstreetmap.org' || url.hostname === 'server.arcgisonline.com') {
         event.respondWith(
             caches.match(event.request).then(cached => {
                 if (cached) return cached;
                 return fetch(event.request).then(response => {
-                    const clone = response.clone();
-                    caches.open(CACHE_NAME).then(cache => cache.put(event.request, clone));
+                    if (response.ok) {
+                        const clone = response.clone();
+                        caches.open(CACHE_NAME).then(cache => cache.put(event.request, clone));
+                    }
                     return response;
                 }).catch(() => new Response('', { status: 408 }));
             })
